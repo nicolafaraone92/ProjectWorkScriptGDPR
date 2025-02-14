@@ -5,7 +5,7 @@ from sqlalchemy import create_engine
 faker = Faker()
 Faker.seed(98765)
 def generate_fake_data(records=10):
-    # Genera un dataset di utenti con informazioni casuali
+# Genera un dataset di utenti con informazioni casuali
     data = {
         'Nome': [faker.first_name() for _ in range(records)],
         'Cognome': [faker.last_name() for _ in range(records)],
@@ -14,7 +14,7 @@ def generate_fake_data(records=10):
     }
     return pd.DataFrame(data)
 def save_to_excel(dataframe,filename="utenti_nuovo.xlsx"):
-    # Salva il dataset in un file Excel
+# Salva il dataset in un file Excel
     dataframe.to_excel(filename, index=False)
     print(f"Dati salvati con successo in {filename}")
 def save_to_sql(dataframe,
